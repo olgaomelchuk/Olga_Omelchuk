@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pharmacy
 {
-    public class Medicine
+    public class Medicine : IComparable<Medicine>
     {
         public readonly string Article;
         public string Name { get; set; }
@@ -61,6 +61,16 @@ namespace Pharmacy
 
             info[1] = $"Отпуск: {release}. Производитель: {Manufacturer}. Цена: {Price}. Кол-во на складе: {StockQuantity} шт.";
             return info;
+        }
+
+        public int CompareTo(Medicine other)
+        {
+            if (other == null) return 1;
+
+            if (Name != other.Name)
+                return string.Compare(Name, other.Name, StringComparison.Ordinal);
+
+            return Price.CompareTo(other.Price);
         }
     }
 }

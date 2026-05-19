@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Medicine.cs" />
+    <Compile Include="MedicineArticleComparer.cs" />
     <Compile Include="MedicineRelease.cs" />
     <Compile Include="Mixture.cs" />
     <Compile Include="Ointment.cs" />
+    <Compile Include="PharmacyStore.cs" />
     <Compile Include="Pills.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

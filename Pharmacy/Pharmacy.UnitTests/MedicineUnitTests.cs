@@ -68,6 +68,23 @@
             });
         }
 
+        [Test]
+        public void CompareToTest()
+        {
+            var med1 = new Medicine("111", "Аспирин", MedicineRelease.WithoutPrescription, "Bayer") { Price = 100 };
+            var med2 = new Medicine("222", "Аспирин", MedicineRelease.WithoutPrescription, "Bayer") { Price = 150 };
+            var med3 = new Medicine("333", "Нурофен", MedicineRelease.WithoutPrescription, "Reckitt") { Price = 200 };
+
+            //Аспирин(100) меньше, чем Аспирин(150)
+            Assert.That(med1.CompareTo(med2), Is.LessThan(0));
+            //Аспирин(150) больше, чем Аспирин(100)
+            Assert.That(med2.CompareTo(med1), Is.GreaterThan(0));
+            //Аспирин(150) меньше, чем Нурофен(200) - сортировка по названию ("А"<"Н")
+            Assert.That(med2.CompareTo(med3), Is.LessThan(0));
+            //При равенстве возвращается 0
+            Assert.That(med1.CompareTo(med1), Is.EqualTo(0));
+        }
+
         private Medicine CreateTestMedicine()
         {
             return new Medicine("123-ABC", "Парацетамол", MedicineRelease.WithoutPrescription, "OZON");
