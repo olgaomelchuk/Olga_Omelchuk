@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Medicine.cs" />
     <Compile Include="MedicineRelease.cs" />
+    <Compile Include="Mixture.cs" />
+    <Compile Include="Ointment.cs" />
+    <Compile Include="Pills.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

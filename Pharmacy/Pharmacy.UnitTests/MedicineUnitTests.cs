@@ -25,8 +25,8 @@
 
             Assert.That(info.Length, Is.EqualTo(2));
             Assert.That(info[0], Is.EqualTo("Артикул: 123-ABC. Название: Парацетамол."));
-            Assert.That($"Отпуск: Отпускается без рецепта. Производитель: OZON. Цена: 0. Кол-во на складе: 0 шт.",
-                Is.EqualTo(info[1]));
+            Assert.That(info[1], Is.EqualTo(
+                "Отпуск: Отпускается без рецепта. Производитель: OZON. Цена: 0. Кол-во на складе: 0 шт."));
         }
 
         [Test]
@@ -42,8 +42,8 @@
             var info = medicine.GetInfo();
             Assert.That(info.Length, Is.EqualTo(2));
             Assert.That(info[0], Is.EqualTo("Артикул: 123-ABC. Название: Парацетамол."));
-            Assert.That($"Отпуск: Отпускается без рецепта. Производитель: OZON. Цена: 149,99. Кол-во на складе: 134 шт.",
-                Is.EqualTo(info[1]));
+            Assert.That(info[1], Is.EqualTo(
+                "Отпуск: Отпускается без рецепта. Производитель: OZON. Цена: 149,99. Кол-во на складе: 134 шт."));
         }
 
         [Test]
